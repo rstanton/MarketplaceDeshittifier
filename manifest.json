@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Marketplace Deshittifier",
+  "version": "1.0.0",
+  "description": "Removes Marketplace products from merchants sites, such as B&Q, on diy.com",
+  "git_repository": "https://github.com/yourusername/your-repo-name",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches":[
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "src/merchantMap.js",
+        "src/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
